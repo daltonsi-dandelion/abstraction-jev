@@ -1,0 +1,8 @@
+pandas>=2.0
+pyarrow>=14.0
+s3fs>=2024.2.0
+pyyaml>=6.0
+requests>=2.31
+# kev is NOT installed here (and don't `pip install kev`: that's an unrelated package).
+# It runs as a server from the adjacent ../kev repo via uv; see config.yaml.
+# laya: whatever its repo needs.

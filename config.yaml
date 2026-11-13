@@ -1,0 +1,19 @@
+# Echo indication classification workflow config
+# Run with: python main.py --config config.yaml
+
+# What to run: "test" (classification suite via test.py) or "preview" (load + print head)
+mode: test
+
+data:
+  s3_uri: s3://data-team-shared/jev-research-beta/echo-report-sample/echo_sample_11_11_2026.parquet
+  text_column: DOCUMENT_TEXT      # column holding the echo narrative text
+  id_column: DH_DOCUMENT_ID             # optional ID column carried through to output
+  aws_profile: null           # optional AWS profile name
+
+test:
+  models: [kev, laya]         # any of: kev, laya
+  limit: 10                 # only classify the first N rows (null = all)
+  output: results/predictions.csv
+
+logging:
+  verbose: false
